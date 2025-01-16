@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'Metropolis Light';
+    src: url('webfonts\Metropolis-Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Metropolis Regular';  
+    src: url('webfonts\Metropolis-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Metropolis Bold';
+    src: url('webfonts\Metropolis-Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Metropolis SemiBold';
+    src: url('webfonts\Metropolis-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Metropolis Medium';
+    src: url('webfonts\Metropolis-Medium.woff2') format('woff2');
+}
+
+* {
+    overflow-x: hidden;
+}
+
+body {
+    font-family:'Metropolis Regular';
+    background-image: 'Images\BRS-page-background.jpg';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding-top: 70px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* Main CSS Code */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    height: 70px;
+}
+
+.navbar img {
+    height: 40px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 100px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar .nav-links a:hover {
+    color: red;
+    transition: color 0.5s ease;
+}
+
+.shop-now {
+    font-family: 'Metropolis Bold';
+    background-color: red;
+    color: white;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.shop-now:hover {
+    background-color: darkred;
+    transition: ease 0.5s;
+}
+
+.parallax {
+    height: 64vh;
+    width: 100vw;
+    background-image: url('bleachbanner.gif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo-container {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.content {
+    padding: 20px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+
+#top-title {
+    font-size: 45px;
+    font-family: 'Metropolis Bold';
+}
+
+.grid-top {
+    margin-left: 450px;
+    margin-right: 450px;
+    font-size: 18px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.top-details {
+    font-size: 35px;
+    line-height: 48px;
+    padding-top: 40px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#left-text {
+    font-size: 25px;
+    padding-top: 50px;
+    font-family: 'Metropolis Bold';
+}
+
+#XBOX {
+    padding-left: 100px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PC {
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PS4 {
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PS5 {
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#platforms {
+    font-family: 'Metropolis Regular';
+    font-size: 15px;
+    padding-top: 50px;
+    padding-left: 100px;
+}
+
+#platforms-button-1 {
+    padding-left: 100px;
+    cursor: pointer;
+}   
+
+.advert-buttons {
+    display: flex;
+}
+
+/* Preorder button */
+.preorder {
+    position: relative;
+    font-family: 'Metropolis Medium';
+    background-color: #e60012;
+    border: 1px solid #e60012;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    text-align: center;
+    cursor: pointer;
+    width: 6.75cm;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 65px;
+    margin-right: 20px;
+}
+
+.preorder .icon {
+    padding-left: 10px;
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.preorder:hover {
+    background-color: transparent;
+    color: #e60012;
+    transition: 0.3s ease;
+}
+
+.preorder:hover img {
+    filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4507%) hue-rotate(349deg) brightness(85%) contrast(114%);
+    transition: filter 0.3s ease;
+}
+
+/* Wishlist */
+
+.wishlist {
+    position: relative;
+    font-family: 'Metropolis Medium';
+    background-color: transparent;
+    border: 1px solid #e60012;
+    border-radius: 4px;
+    color: #e60012;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    text-align: center;
+    cursor: pointer;
+    width: 6.75cm;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}   
+
+.wishlist .icon2 {
+    padding-left: 10px;
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 32%;
+    left: 5%;
+}
+
+.wishlist:hover {
+    background-color: #e60012;
+    color: #f7f7f7;
+    transition: 0.3s ease;
+}
+
+.wishlist:hover img {
+    filter: invert(100%) sepia(86%) saturate(141%) hue-rotate(206deg) brightness(114%) contrast(94%);
+    transition: filter 0.3s ease;
+}
+
+/* Video Player CSS */
+#right-video {
+    grid-area: 'right-video'    ;
+}
+
+.grid-container-top {
+    grid-area: 'left-text';
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    'left-top-text right-video';
+    margin: 100px;
+    gap: 35px;
+}
+
+.grid-container-top h2 {
+    line-height: 50px;
+}
+
+.video-container {
+    display: block;
+    height: 60vh;
+    position: relative;
+    transition: opacity .3s;
+    width: 50vw;
+    z-index: 2;
+}
+
+.fullscreen-iframe { 
+    position: absolute; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border: none;
+    pointer-events: auto;   
+}
+
+/* Key Features Section */
+
+#key-1 {
+    grid-area: 'key-1';
+    margin-top: -300px;
+}
+
+#key-2 {
+    grid-area: 'key-2';
+    margin-top: 100px;
+}
+
+#key-3 {
+    grid-area: 'key-3';
+    margin-top: 500px;
+}
+
+.key-features {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    'key-1 key-2 key-3';
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.key-images {
+    height: auto;
+    width: 560px;
+}
