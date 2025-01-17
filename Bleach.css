@@ -346,7 +346,7 @@ h1 {
     'key-1 key-2 key-3';
     align-items: center;
     justify-content: center;
-    margin-bottom: 200px;
+    margin-bottom: -275px;
 }
 
 .key-images {
@@ -368,3 +368,40 @@ h1 {
     font-size: 20px;
     text-align: center;
 }
+
+/* Email Section */
+
+.subscribe-container {
+    padding: 40px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+  }
+  
+  .email-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    font-family: 'Metropolis Medium';
+  }
+  
+  .subscribe-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Metropolis Bold';
+  }
+  
+  .subscribe-button:hover {
+    background-color: darkred;
+  }
