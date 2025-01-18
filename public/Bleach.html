@@ -4,6 +4,7 @@
     <title> BLEACH Rebirth of Souls </title>
     <link rel="stylesheet" href="Bleach.css">
     <script src="Bleach.js"> </script>
+    <script> src="server.js"></script>
 </head>
 
 <body>
@@ -128,10 +129,12 @@
             <h1>Don't miss any news</h1>
             <p>Get the latest updates from our products and services</p>
 
-            <div class="form-container">
-              <input type="email" placeholder="Your email" class="email-input">
-              <button class="subscribe-button">SUBSCRIBE</button>
-            </div>
+            <form action="/subscribe" method="POST" class="form-container">
+
+                <input type="email" name="email" placeholder="Your email" class="email-input" required>
+                <button type="submit" class="subscribe-button">SUBSCRIBE</button>
+
+            </form>
 
           </div>
 
