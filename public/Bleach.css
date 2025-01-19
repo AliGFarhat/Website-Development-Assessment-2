@@ -21,6 +21,7 @@
 
 * {
     overflow-x: hidden;
+    right: 0;
 }
 
 body {
@@ -62,6 +63,7 @@ li {
 .navbar .nav-links {
     display: flex;
     gap: 100px;
+    transition: ease-in-out 0.5s;
 }
 
 .navbar .nav-links a {
@@ -379,7 +381,7 @@ h1 {
     display: flex;
     justify-content: left;
     gap: 10px;
-  }
+}
   
   .email-input {
     padding: 10px;
@@ -388,7 +390,7 @@ h1 {
     border-radius: 4px;
     width: 300px;
     font-family: 'Metropolis Medium';
-  }
+}
   
   .subscribe-button {
     background-color: red;
@@ -400,8 +402,16 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Metropolis Bold';
-  }
+}
   
   .subscribe-button:hover {
     background-color: darkred;
   }
+
+@media (min-width: 360px) and (max-width: 960px) {
+    
+    .navbar .nav-links {
+        gap: 30px;
+        transition: ease-in-out 0.5s;
+    }
+}
