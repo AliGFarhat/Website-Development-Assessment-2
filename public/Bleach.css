@@ -70,6 +70,7 @@ li {
     color: white;
     text-decoration: none;
     font-size: 14px;
+    transition: ease 0.3s;
 }
 
 .navbar .nav-links a:hover {
@@ -94,6 +95,8 @@ li {
     background-color: darkred;
     transition: ease 0.5s;
 }
+
+/* Main Content */
 
 .parallax {
     height: 64vh;
@@ -170,7 +173,7 @@ h1 {
 }
 
 #XBOX {
-    padding-left: 100px;
+    padding-left: 5vw;
     padding-right: 8px;
     cursor: pointer;
 }
@@ -194,16 +197,21 @@ h1 {
     font-family: 'Metropolis Regular';
     font-size: 15px;
     padding-top: 50px;
-    padding-left: 100px;
+    padding-left: 5vw;
 }
 
 #platforms-button-1 {
-    padding-left: 100px;
+    padding-left: 0.5vw;
     cursor: pointer;
 }   
 
 .advert-buttons {
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-right: 40px;
+    margin-top: 20px;
 }
 
 /* Preorder button */
@@ -221,13 +229,11 @@ h1 {
     width: 6.75cm;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 65px;
-    margin-right: 20px;
+    transition: 0.3s ease;
 }
 
 .preorder .icon {
-    padding-left: 10px;
+    padding-left: 0.5vw;
     width: 30px;
     height: auto;
     position: absolute;
@@ -263,16 +269,17 @@ h1 {
     width: 6.75cm;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 20px;
+    transition: 0.3s ease;
 }   
 
 .wishlist .icon2 {
-    padding-left: 10px;
+    padding-left: 0.521vw;
     width: 30px;
     height: auto;
     position: absolute;
     top: 32%;
     left: 5%;
+    padding-right: 1px;
 }
 
 .wishlist:hover {
@@ -411,14 +418,15 @@ h1 {
     background-color: darkred;
   }
 
-  @media (min-width: 720px) and (max-width: 1024px) {
+  @media (min-width: 320px) and (max-width: 1024px) {
+
     .grid-container-top {
         display: grid;
-        grid-template-columns: 1fr; /* 1 column */
-        grid-template-rows: auto auto; /* 2 rows */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
         grid-template-areas: 
-            'right-video' /* Video on top */
-            'left-top-text'; /* Text below the video */
+        'right-video' /* Video on top */
+        'left-top-text'; /* Text below the video */
         gap: 20px;
     }
 
@@ -426,10 +434,10 @@ h1 {
     .video-container {
         display: block;
         width: 100%;
-        height: auto; /* Let the height be adjusted based on content */
+        height: auto;
         position: relative;
         padding-bottom: 56.25%; /* To maintain 16:9 aspect ratio */
-        background-color: transparent;
+        transition: opacity 1s ease-in-out, visibility 0s 0s;
     }
 
     /* Ensure that the iframe stays responsive */
@@ -444,16 +452,32 @@ h1 {
 
     /* Ensure left text has proper space and width */
     #left-text {
-        width: 100%; /* Full width */
-        text-align: center; /* Optional, depending on text alignment */
+        width: 100%;
+        text-align: center;
     }
 
     /* Force the order of elements */
     #right-video {
-        order: 1; /* Force the video to be first */
+        order: 1;
     }
 
     #left-text {
-        order: 2; /* Force the text to be second */
+        order: 2;
+    }
+
+    #XBOX {
+        padding-left: 0;
+    }
+
+    #PS5 {
+        padding-right: 0;
+    }
+
+    #platforms {
+        padding-left: 0;
+    }
+
+    .advert-buttons {
+        padding-right: 0;
     }
 }
