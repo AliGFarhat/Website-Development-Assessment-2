@@ -26,7 +26,7 @@
 
 body {
     font-family:'Metropolis Regular';
-    background-image: 'Images\BRS-page-background.jpg';
+    background-image: 'Images/BRS-page-background.jpg';
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -335,6 +335,13 @@ h1 {
 }
 
 /* Key Features Section */
+
+.key-features-text {
+    font-family: 'Metropolis Bold';
+    padding-left: 50px;
+    padding-top: 50px;
+    margin-bottom: -50px;
+}
 
 #key-1 {
     grid-area: 'key-1';
