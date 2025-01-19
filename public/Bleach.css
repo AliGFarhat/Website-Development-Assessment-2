@@ -111,11 +111,14 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    width: auto;
+    max-width: 100%;
 }
 
-.logo {
-    font-size: 2em;
-    font-weight: bold;
+.logo-container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
 }
 
 .content {
@@ -408,7 +411,7 @@ h1 {
     background-color: darkred;
   }
 
-@media (min-width: 360px) and (max-width: 960px) {
+@media (min-width: 720px) and (max-width: 1024px) {
     
     .navbar .nav-links {
         gap: 30px;
