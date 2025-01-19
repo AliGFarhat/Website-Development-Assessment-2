@@ -2,22 +2,24 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> BLEACH Rebirth of Souls </title>
+    <link rel="icon" href="Images/bandai.png" type="favicon"> <!-- Tab Icon-->
+    <title> BLEACH Rebirth of Souls </title> <!-- Page Title-->
+    <!-- Linking to CSS and Javascripts -->
     <link rel="stylesheet" href="Bleach.css">
     <script src="Bleach.js"> </script>
     <script src="server.js"> </script>
 </head>
 
 <body>
-
+<!-- Nav Bar Section -->
     <section class="navbar">
         <img src="Images\BRS-game-logo.webp" alt="Left Logo" onclick="window.location.href='#';">
         <div class="nav-links">
-            <a href="#">Key Features</a>
-            <a href="#">Character Roster</a>
-            <a href="#">Add to Wishlist</a>
+            <a onclick="scrollToSection('key-features-scrolling')">Key Features</a>
+            <a onclick="window.open('https://en.bandainamcoent.eu/bleach-rebirth-of-souls-character-roster', '_blank');">Character Roster</a>
+            <a onclick="scrollToSection('wishlist-scrolling-id')">Add to Wishlist</a>
         </div>
-        <button class="shop-now" onclick="window.location.href='#';">SHOP NOW</button>
+        <button class="shop-now" onclick="window.open('https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls/shop-now', '_blank');">SHOP NOW</button> <!-- Opens a new tab when 'SHOP NOW' is pressed. -->
     </section>
 
 <!-- Main Structure -->
@@ -30,16 +32,18 @@
 
         </div>
 
+        <!-- Top most text details -->
         <section class="top-details">
             <h1 id="top-title"> BLEACH Rebirth of Souls </h1>
         </section>
 
-        <div class="container"> 
+        <div class="container" id="wishlist-scrolling-id"> 
             <p> <span style = "color:#FF0D00;">Release Date: </span>21/03/2025 <p> 
             <p> <span style = "color:#FF0D00;">Genres: </span>Fighting <p> 
             <p> <span style = "color:#FF0D00;">Developer: </span>Tamsoft Corporation <p> 
         </div>
 
+    <!-- Grid with 2 columns and 1 row left text and right video -->
     <section class="grid-container-top">
 
         <div id="left-text">
@@ -66,16 +70,17 @@
 
             </div>
 
+            <!-- This contains both the preorder button and the wishlist button -->
             <div class="advert-buttons">
                 <div class="preorder">
-                    <a>
+                    <a href="https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls" target="_blank">
                         <div class="icon"> <img src="Icons\shoppingbag_white.svg"> </div>
                         <span class="txt">Preorder now</span>
                     </a>
                 </div>
 
                 <div class="wishlist">
-                    <a>
+                    <a href="https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls#add-to-wishlist" target="_blank">
                         <div class="icon2"> <img src="Icons\heart_red.svg"> </div>
                         <span class="txt2">Add to wishlist</span>
                     </a>
@@ -84,20 +89,21 @@
         </div>
 
         
-
+        <!-- Opens a youtube video using the youtube embed link -->
         <div class="video-container" id="right-video">
             <iframe id="youtube-player" class="fullscreen-iframe" src="https://www.youtube.com/embed/B0XoOx8kTEk?si=LSvumJj_KFR2QSn_&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
     </section>
 
-    <h1 class="key-features-text"> Key features </h1>
+    <h1 class="key-features-text" id="key-features-scrolling"> Key features </h1>
 
+    <!-- The Key Features Section of the Page -->
     <section class="key-features">
 
         <div class="key-images" id="key-1">
             <img src="Images\BRS-KF-screenshot-1.png">
-            <p class="image-title"> UNLEASH YOUR SWORD </p>
+            <p class="image-title"> UNLEASH THE TRUE POWER OF YOUR SWORD </p>
             <p class="image-caption"> Choose your favorite character and unleash their <span style = "color:#FF0D00;"> unique sword abilities! </span>
                 <br><br><br>
                 Take advantage of each character's unique abilities and command the flow of battle to find an 
@@ -122,12 +128,14 @@
         
     </section>
 
+    <!-- Email Sending through localhost and NodeMailer -->
     <section class="email-section">
 
         <div class="subscribe-container">
             <h1>Don't miss any news</h1>
             <p>Get the latest updates from our products and services</p>
 
+            <!-- /subscribe listens to POST requests made to the URL -->
             <form action="/subscribe" method="POST" class="form-container">
 
                 <input type="email" name="email" placeholder="Your email" class="email-input" required>

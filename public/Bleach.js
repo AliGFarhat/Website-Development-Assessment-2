@@ -49,3 +49,11 @@ function onPlayerStateChange(event) {
       }
     });
   }
+
+function scrollToSection(sectionId) {
+  // Scroll where you want to with provided ID.
+  var target = document.getElementById(sectionId);
+
+  // Scroll smoothly <(＿　＿)>
+  target.scrollIntoView({ behavior: "smooth" });
+}

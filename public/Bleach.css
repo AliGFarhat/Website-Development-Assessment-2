@@ -1,3 +1,4 @@
+/* Import Fonts and Assign Font Family Names */
 @font-face {
     font-family: 'Metropolis Light';
     src: url('./webfonts/Metropolis-Light.woff2') format('woff2');
@@ -19,14 +20,15 @@
     src: url('./webfonts/Metropolis-Medium.woff2') format('woff2');
 }
 
+/* Keeps the parallax the same no matter the screen size */
 * {
     overflow-x: hidden;
     right: 0;
 }
 
+/* Assign default font and background colors*/
 body {
     font-family:'Metropolis Regular';
-    background-image: 'Images/BRS-page-background.jpg';
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +42,12 @@ li {
     list-style-type: none;
 }
 
-/* Main CSS Code */
+a {
+    color: inherit; /* Change color so it does not turn blue and purple */
+    text-decoration: none; /* Remove underline from button */
+}
+
+/* Nav Bar Code */
 
 .navbar {
     display: flex;
@@ -64,6 +71,7 @@ li {
     display: flex;
     gap: 100px;
     transition: ease-in-out 0.5s;
+    cursor: pointer;
 }
 
 .navbar .nav-links a {
@@ -97,7 +105,7 @@ li {
 }
 
 /* Main Content */
-
+    /* Parallax Effect with a Gif */
 .parallax {
     height: 64vh;
     width: 100vw;
@@ -108,6 +116,7 @@ li {
     background-size: cover;
 }
 
+/* Logo CSS for the one that overlaps half of it on top of the parallax and half on top of the background */
 .logo-container {
     position: absolute;
     top: 72%;
@@ -166,6 +175,7 @@ h1 {
     gap: 10px;
 }
 
+/* CSS for the first grid section */
 #left-text {
     font-size: 25px;
     padding-top: 50px;
@@ -205,6 +215,7 @@ h1 {
     cursor: pointer;
 }   
 
+/* Both Buttons CSS */
 .advert-buttons {
     display: flex;
     gap: 20px;
@@ -427,6 +438,11 @@ h1 {
 
   @media (min-width: 320px) and (max-width: 1024px) {
 
+    .navbar .nav-links {
+        gap: 30px;
+        transition: ease-in-out 0.5s;
+    }
+
     .grid-container-top {
         display: grid;
         grid-template-columns: 1fr;
@@ -435,6 +451,7 @@ h1 {
         'right-video' /* Video on top */
         'left-top-text'; /* Text below the video */
         gap: 20px;
+        margin: 40px;
     }
 
     /* Video container adjustments */
@@ -472,6 +489,7 @@ h1 {
         order: 2;
     }
 
+    /* Removing Pre-existing Paddings */
     #XBOX {
         padding-left: 0;
     }
@@ -487,4 +505,45 @@ h1 {
     .advert-buttons {
         padding-right: 0;
     }
+
+    .key-features-text {
+        margin-bottom: 20px;
+    }
+
+    #key-1 {
+        margin-top: 0px;
+    }
+    
+    #key-2 {
+        margin-top: 0px;
+    }
+    
+    #key-3 {
+        margin-top: 0px;
+    }
+
+    .key-features {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .key-images {
+        width: 100%;
+        margin-bottom: 40px; /* Adds space between each key feature */
+    }
+
+    /* Red Border Box no longer fill the entire display width */
+    .image-title {
+        font-family: 'Metropolis Bold';
+        font-size: 24px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 100px;
+    }
+
+    .image-caption {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
 }
