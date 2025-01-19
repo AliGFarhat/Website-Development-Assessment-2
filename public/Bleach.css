@@ -288,7 +288,7 @@ h1 {
 
 /* Video Player CSS */
 #right-video {
-    grid-area: 'right-video'    ;
+    grid-area: 'right-video';
 }
 
 .grid-container-top {
@@ -411,10 +411,49 @@ h1 {
     background-color: darkred;
   }
 
-@media (min-width: 720px) and (max-width: 1024px) {
-    
-    .navbar .nav-links {
-        gap: 30px;
-        transition: ease-in-out 0.5s;
+  @media (min-width: 720px) and (max-width: 1024px) {
+    .grid-container-top {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 column */
+        grid-template-rows: auto auto; /* 2 rows */
+        grid-template-areas: 
+            'right-video' /* Video on top */
+            'left-top-text'; /* Text below the video */
+        gap: 20px;
+    }
+
+    /* Video container adjustments */
+    .video-container {
+        display: block;
+        width: 100%;
+        height: auto; /* Let the height be adjusted based on content */
+        position: relative;
+        padding-bottom: 56.25%; /* To maintain 16:9 aspect ratio */
+        background-color: transparent;
+    }
+
+    /* Ensure that the iframe stays responsive */
+    .fullscreen-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Ensure left text has proper space and width */
+    #left-text {
+        width: 100%; /* Full width */
+        text-align: center; /* Optional, depending on text alignment */
+    }
+
+    /* Force the order of elements */
+    #right-video {
+        order: 1; /* Force the video to be first */
+    }
+
+    #left-text {
+        order: 2; /* Force the text to be second */
     }
 }
