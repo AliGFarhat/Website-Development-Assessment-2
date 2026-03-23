@@ -110,8 +110,10 @@ a {
     height: 64vh;
     width: 100vw;
     background-color: #1a1a1a;
-    position: relative; /* Essential for the logo-container positioning */
-    overflow: hidden;    /* Clips the video to the container bounds */
+    position: relative; 
+    overflow: hidden;
+    z-index: 1;
+    clip-path: inset(0 0 0 0); 
 }
 
 /* Add this new class */
