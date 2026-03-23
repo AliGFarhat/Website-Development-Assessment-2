@@ -106,25 +106,9 @@ a {
     background-color: #000;
 }
 
-/* Updated: Added Video Styling */
-.parallax-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1; /* Video sits at the bottom */
-    pointer-events: none;
-}
-
-/* Updated: Logo now sits inside parallax */
 .logo-container {
     position: absolute;
-    top: 52%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
