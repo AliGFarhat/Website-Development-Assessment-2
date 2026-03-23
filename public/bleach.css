@@ -105,16 +105,24 @@ a {
 }
 
 /* Main Content */
-    /* Parallax Effect with a Gif */
+/* Parallax Effect with a Gif */
 .parallax {
     height: 64vh;
     width: 100vw;
-    background-color: #1a1a1a; /* Shows this dark grey while the GIF downloads */
-    background-image: url('https://drive.google.com/uc?export=view&id=1DJm4LgJkzcA7nLiIHGYOd07f9MqKPtLT');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #1a1a1a;
+    position: relative; /* Essential for the logo-container positioning */
+    overflow: hidden;    /* Clips the video to the container bounds */
+}
+
+/* Add this new class */
+.parallax-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Acts like 'background-size: cover' */
+    position: fixed;   /* This creates the Parallax scrolling effect */
+    top: 0;
+    left: 0;
+    z-index: -1;       /* Keeps it behind your logo and content */
 }
 
 /* Logo CSS for the one that overlaps half of it on top of the parallax and half on top of the background */
