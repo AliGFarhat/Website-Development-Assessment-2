@@ -23,7 +23,7 @@
 /* Global Styles */
 * {
     overflow-x: hidden;
-    box-sizing: border-box; /* Better for layout calculations */
+    box-sizing: border-box;
 }
 
 body {
@@ -99,14 +99,16 @@ a {
 
 /* Main Content - Video Parallax Section */
 .parallax {
-    position: relative;
+    position: relative; /* CRITICAL: This anchors the absolute logo inside the box */
     height: 64vh;
     width: 100vw;
-    overflow: hidden; /* Clips the video */
+    overflow: hidden;
     background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Updated: Added Video Styling */
 .parallax-video {
     position: absolute;
     top: 50%;
@@ -117,19 +119,22 @@ a {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: 1; /* Video sits at the bottom */
+    z-index: 1; /* Lowest layer */
+    
+    /* Disables mouse interaction with the video */
     pointer-events: none;
+    user-select: none;
 }
 
-/* Updated: Logo now sits inside parallax */
+/* Logo centered on top of the video */
 .logo-container {
     position: absolute;
-    top: 50%;
+    top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* Sits above the video */
+    z-index: 10; /* Highest layer in this section */
     width: auto;
-    max-width: 100%;
+    max-width: 80%;
     display: flex;
     justify-content: center;
 }
@@ -367,5 +372,9 @@ a {
     .key-images {
         width: 90%;
         margin-bottom: 40px;
+    }
+
+    .parallax {
+        height: 40vh; /* Shorter banner for mobile */
     }
 }
