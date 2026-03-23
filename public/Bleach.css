@@ -23,7 +23,7 @@
 /* Global Styles */
 * {
     overflow-x: hidden;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Better for layout calculations */
 }
 
 body {
@@ -99,13 +99,14 @@ a {
 
 /* Main Content - Video Parallax Section */
 .parallax {
-    position: relative; /* Anchor for the absolute logo */
+    position: relative;
     height: 64vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: hidden; /* Clips the video */
     background-color: #000;
 }
 
+/* Updated: Added Video Styling */
 .parallax-video {
     position: absolute;
     top: 50%;
@@ -116,27 +117,21 @@ a {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: 1;
-    
-    /* Fixes the scrolling issue by making the video 'ghost-like' */
+    z-index: 1; /* Video sits at the bottom */
     pointer-events: none;
-    user-select: none;
 }
 
-/* Logo Positioned Relative to the Banner */
+/* Updated: Logo now sits inside parallax */
 .logo-container {
     position: absolute;
-    top: 72%; /* Original overlap position */
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100; 
+    z-index: 10; /* Sits above the video */
     width: auto;
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
-    
-    /* Ensures the logo area doesn't block mouse scrolling */
-    pointer-events: none; 
 }
 
 .logo-container img {
@@ -372,9 +367,5 @@ a {
     .key-images {
         width: 90%;
         margin-bottom: 40px;
-    }
-
-    .parallax {
-        height: 40vh;
     }
 }
