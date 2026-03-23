@@ -20,14 +20,18 @@
     src: url('./webfonts/Metropolis-Medium.woff2') format('woff2');
 }
 
-/* Global Styles */
+/* Keeps the parallax the same no matter the screen size */
 * {
     overflow-x: hidden;
-    box-sizing: border-box; /* Better for layout calculations */
+    right: 0;
 }
 
+/* Assign default font and background colors*/
 body {
     font-family:'Metropolis Regular';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #000;
     color: white;
     margin: 0;
@@ -39,11 +43,12 @@ li {
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color: inherit; /* Change color so it does not turn blue and purple */
+    text-decoration: none; /* Remove underline from button */
 }
 
 /* Nav Bar Code */
+
 .navbar {
     display: flex;
     align-items: center;
@@ -71,12 +76,14 @@ a {
 
 .navbar .nav-links a {
     color: white;
+    text-decoration: none;
     font-size: 14px;
     transition: ease 0.3s;
 }
 
 .navbar .nav-links a:hover {
     color: red;
+    transition: color 0.5s ease;
 }
 
 .shop-now {
@@ -97,15 +104,20 @@ a {
     transition: ease 0.5s;
 }
 
-/* Main Content - Video Parallax Section */
+/* Main Content */
+    /* Parallax Effect with a Gif */
 .parallax {
-    position: relative;
     height: 64vh;
     width: 100vw;
-    overflow: hidden; /* Clips the video */
-    background-color: #000;
+    background-color: #1a1a1a; /* Shows this dark grey while the GIF downloads */
+    background-image: url('https://drive.google.com/uc?export=view&id=1DJm4LgJkzcA7nLiIHGYOd07f9MqKPtLT');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+/* Logo CSS for the one that overlaps half of it on top of the parallax and half on top of the background */
 .logo-container {
     position: absolute;
     top: 72%;
@@ -122,7 +134,31 @@ a {
     max-width: 100%;
 }
 
-/* Grid & Text Content */
+.content {
+    padding: 20px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+
+#top-title {
+    font-size: 45px;
+    font-family: 'Metropolis Bold';
+}
+
+.grid-top {
+    margin-left: 450px;
+    margin-right: 450px;
+    font-size: 18px;
+    text-align: left;
+    line-height: 30px;
+}
+
 .top-details {
     font-size: 35px;
     line-height: 48px;
@@ -130,11 +166,6 @@ a {
     margin-bottom: 12px;
     margin-top: 12px;
     text-align: center;
-}
-
-#top-title {
-    font-size: 45px;
-    font-family: 'Metropolis Bold';
 }
 
 .container {
@@ -145,17 +176,32 @@ a {
     gap: 10px;
 }
 
-.grid-container-top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 100px;
-    gap: 35px;
-}
-
+/* CSS for the first grid section */
 #left-text {
     font-size: 25px;
     padding-top: 50px;
     font-family: 'Metropolis Bold';
+}
+
+#XBOX {
+    padding-left: 5vw;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PC {
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PS4 {
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#PS5 {
+    padding-right: 8px;
+    cursor: pointer;
 }
 
 #platforms {
@@ -165,20 +211,12 @@ a {
     padding-left: 5vw;
 }
 
-.platforms-button-1 {
-    display: flex;
-    align-items: center;
+#platforms-button-1 {
     padding-left: 0.5vw;
-}
-
-#XBOX, #PC, #PS4, #PS5 {
     cursor: pointer;
-    padding-right: 8px;
-}
+}   
 
-#XBOX { padding-left: 5vw; }
-
-/* Buttons */
+/* Both Buttons CSS */
 .advert-buttons {
     display: flex;
     gap: 20px;
@@ -188,9 +226,12 @@ a {
     margin-top: 20px;
 }
 
-.preorder, .wishlist {
+/* Preorder button */
+.preorder {
     position: relative;
     font-family: 'Metropolis Medium';
+    background-color: #e60012;
+    border: 1px solid #e60012;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
@@ -203,151 +244,307 @@ a {
     transition: 0.3s ease;
 }
 
-.preorder {
-    background-color: #e60012;
-    border: 1px solid #e60012;
-    color: white;
-}
-
-.preorder .icon, .wishlist .icon2 {
-    position: absolute;
+.preorder .icon {
+    padding-left: 0.5vw;
     width: 30px;
+    height: auto;
+    position: absolute;
+    top: 30%;
     left: 5%;
 }
-
-.preorder .icon { top: 30%; }
-.wishlist .icon2 { top: 32%; }
 
 .preorder:hover {
     background-color: transparent;
     color: #e60012;
+    transition: 0.3s ease;
 }
 
 .preorder:hover img {
     filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4507%) hue-rotate(349deg) brightness(85%) contrast(114%);
+    transition: filter 0.3s ease;
 }
 
+/* Wishlist */
+
 .wishlist {
+    position: relative;
+    font-family: 'Metropolis Medium';
     background-color: transparent;
     border: 1px solid #e60012;
+    border-radius: 4px;
     color: #e60012;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    text-align: center;
+    cursor: pointer;
+    width: 6.75cm;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.3s ease;
+}   
+
+.wishlist .icon2 {
+    padding-left: 0.521vw;
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 32%;
+    left: 5%;
+    padding-right: 1px;
 }
 
 .wishlist:hover {
     background-color: #e60012;
     color: #f7f7f7;
+    transition: 0.3s ease;
 }
 
 .wishlist:hover img {
     filter: invert(100%) sepia(86%) saturate(141%) hue-rotate(206deg) brightness(114%) contrast(94%);
+    transition: filter 0.3s ease;
 }
 
-/* Video Player */
+/* Video Player CSS */
+#right-video {
+    grid-area: 'right-video';
+}
+
+.grid-container-top {
+    grid-area: 'left-text';
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    'left-top-text right-video';
+    margin: 100px;
+    gap: 35px;
+}
+
+.grid-container-top h2 {
+    line-height: 50px;
+}
+
 .video-container {
+    display: block;
     height: 60vh;
     position: relative;
+    transition: opacity .3s;
     width: 50vw;
     z-index: 2;
 }
 
-.fullscreen-iframe { 
+.fullscreen-iframe { 
     position: absolute; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    top: 0; 
+    left: 0; 
     width: 100%; 
     height: 100%; 
     border: none;
+    pointer-events: auto;   
 }
 
-/* Key Features */
+/* Key Features Section */
+
 .key-features-text {
     font-family: 'Metropolis Bold';
     padding-left: 50px;
     padding-top: 50px;
+    margin-bottom: -50px;
+}
+
+#key-1 {
+    grid-area: 'key-1';
+    margin-top: -300px;
+}
+
+#key-2 {
+    grid-area: 'key-2';
+    margin-top: 100px;
+}
+
+#key-3 {
+    grid-area: 'key-3';
+    margin-top: 500px;
 }
 
 .key-features {
     display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    'key-1 key-2 key-3';
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 50px;
+    margin-bottom: -275px;
 }
 
 .key-images {
-    width: 30%;
-    text-align: center;
-}
-
-.key-images img {
-    width: 100%;
     height: auto;
+    width: 560px;
 }
 
 .image-title {
     font-family: 'Metropolis Bold';
-    font-size: 1.2rem;
+    font-size: 24px;
     border: 2px solid #e60012;
-    padding: 10px;
-    margin: 15px 0;
+    background-color: transparent;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
 }
 
 .image-caption {
     font-family: 'Metropolis Regular';
-    font-size: 1rem;
+    font-size: 20px;
+    text-align: center;
 }
 
 /* Email Section */
+
 .subscribe-container {
-    padding: 80px 40px;
-    text-align: center;
+    padding: 40px;
 }
 
 .form-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
-    margin-top: 20px;
 }
-
-.email-input {
+  
+  .email-input {
     padding: 10px;
-    width: 300px;
-    border-radius: 4px;
+    font-size: 1rem;
     border: none;
+    border-radius: 4px;
+    width: 300px;
+    font-family: 'Metropolis Medium';
 }
-
-.subscribe-button {
+  
+  .subscribe-button {
     background-color: red;
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
     font-family: 'Metropolis Bold';
 }
+  
+  .subscribe-button:hover {
+    background-color: darkred;
+  }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .navbar .nav-links { gap: 30px; }
-    
-    .grid-container-top {
-        grid-template-columns: 1fr;
-        margin: 20px;
+  @media (min-width: 320px) and (max-width: 1024px) {
+
+    .navbar .nav-links {
+        gap: 30px;
+        transition: ease-in-out 0.5s;
     }
 
+    .grid-container-top {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        'right-video' /* Video on top */
+        'left-top-text'; /* Text below the video */
+        gap: 20px;
+        margin: 40px;
+    }
+
+    /* Video container adjustments */
     .video-container {
+        display: block;
         width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
+        height: auto;
+        position: relative;
+        padding-bottom: 56.25%; /* To maintain 16:9 aspect ratio */
+        transition: opacity 1s ease-in-out, visibility 0s 0s;
+    }
+
+    /* Ensure that the iframe stays responsive */
+    .fullscreen-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Ensure left text has proper space and width */
+    #left-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Force the order of elements */
+    #right-video {
+        order: 1;
+    }
+
+    #left-text {
+        order: 2;
+    }
+
+    /* Removing Pre-existing Paddings */
+    #XBOX {
+        padding-left: 0;
+    }
+
+    #PS5 {
+        padding-right: 0;
+    }
+
+    #platforms {
+        padding-left: 0;
+    }
+
+    .advert-buttons {
+        padding-right: 0;
+    }
+
+    .key-features-text {
+        margin-bottom: 20px;
+    }
+
+    #key-1 {
+        margin-top: 0px;
+    }
+    
+    #key-2 {
+        margin-top: 0px;
+    }
+    
+    #key-3 {
+        margin-top: 0px;
     }
 
     .key-features {
-        flex-direction: column;
-        align-items: center;
+        display: block;
+        margin-bottom: 0;
     }
 
     .key-images {
-        width: 90%;
-        margin-bottom: 40px;
+        width: 100%;
+        margin-bottom: 40px; /* Adds space between each key feature */
     }
+
+    /* Red Border Box no longer fill the entire display width */
+    .image-title {
+        font-family: 'Metropolis Bold';
+        font-size: 24px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 100px;
+    }
+
+    .image-caption {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
 }
