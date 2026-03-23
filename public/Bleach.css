@@ -1,371 +1,371 @@
 /* Import Fonts and Assign Font Family Names */
 @font-face {
-    font-family: 'Metropolis Light';
-    src: url('./webfonts/Metropolis-Light.woff2') format('woff2');
+    font-family: 'Metropolis Light';
+    src: url('./webfonts/Metropolis-Light.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Metropolis Regular';  
-    src: url('./webfonts/Metropolis-Regular.woff2') format('woff2');
+    font-family: 'Metropolis Regular';  
+    src: url('./webfonts/Metropolis-Regular.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Metropolis Bold';
-    src: url('./webfonts/Metropolis-Bold.woff2') format('woff2');
+    font-family: 'Metropolis Bold';
+    src: url('./webfonts/Metropolis-Bold.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Metropolis SemiBold';
-    src: url('./webfonts/Metropolis-SemiBold.woff2') format('woff2');
+    font-family: 'Metropolis SemiBold';
+    src: url('./webfonts/Metropolis-SemiBold.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Metropolis Medium';
-    src: url('./webfonts/Metropolis-Medium.woff2') format('woff2');
+    font-family: 'Metropolis Medium';
+    src: url('./webfonts/Metropolis-Medium.woff2') format('woff2');
 }
 
 /* Global Styles */
 * {
-    overflow-x: hidden;
-    box-sizing: border-box; /* Better for layout calculations */
+    overflow-x: hidden;
+    box-sizing: border-box; /* Better for layout calculations */
 }
 
 body {
-    font-family:'Metropolis Regular';
-    background-color: #000;
-    color: white;
-    margin: 0;
-    padding-top: 70px;
+    font-family:'Metropolis Regular';
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding-top: 70px;
 }
 
 li {
-    list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Nav Bar Code */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    height: 70px;
 }
 
 .navbar img {
-    height: 40px;
-    cursor: pointer;
-    margin-left: 15px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 .navbar .nav-links {
-    display: flex;
-    gap: 100px;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
+    display: flex;
+    gap: 100px;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
 }
 
 .navbar .nav-links a {
-    color: white;
-    font-size: 14px;
-    transition: ease 0.3s;
+    color: white;
+    font-size: 14px;
+    transition: ease 0.3s;
 }
 
 .navbar .nav-links a:hover {
-    color: red;
+    color: red;
 }
 
 .shop-now {
-    font-family: 'Metropolis Bold';
-    background-color: red;
-    color: white;
-    padding: 15px 25px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 15px;
+    font-family: 'Metropolis Bold';
+    background-color: red;
+    color: white;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
 }
 
 .shop-now:hover {
-    background-color: darkred;
-    transition: ease 0.5s;
+    background-color: darkred;
+    transition: ease 0.5s;
 }
 
 /* Main Content - Video Parallax Section */
 .parallax {
-    position: relative;
-    height: 64vh;
-    width: 100vw;
-    overflow: hidden; /* Clips the video */
-    background-color: #000;
+    position: relative;
+    height: 64vh;
+    width: 100vw;
+    overflow: hidden; /* Clips the video */
+    background-color: #000;
 }
 
 /* Updated: Added Video Styling */
 .parallax-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1; /* Video sits at the bottom */
-    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1; /* Video sits at the bottom */
+    pointer-events: none;
 }
 
 /* Updated: Logo now sits inside parallax */
 .logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Sits above the video */
-    width: auto;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Sits above the video */
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .logo-container img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
 }
 
 /* Grid & Text Content */
 .top-details {
-    font-size: 35px;
-    line-height: 48px;
-    padding-top: 40px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    text-align: center;
+    font-size: 35px;
+    line-height: 48px;
+    padding-top: 40px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    text-align: center;
 }
 
 #top-title {
-    font-size: 45px;
-    font-family: 'Metropolis Bold';
+    font-size: 45px;
+    font-family: 'Metropolis Bold';
 }
 
 .container {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
 }
 
 .grid-container-top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 100px;
-    gap: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 100px;
+    gap: 35px;
 }
 
 #left-text {
-    font-size: 25px;
-    padding-top: 50px;
-    font-family: 'Metropolis Bold';
+    font-size: 25px;
+    padding-top: 50px;
+    font-family: 'Metropolis Bold';
 }
 
 #platforms {
-    font-family: 'Metropolis Regular';
-    font-size: 15px;
-    padding-top: 50px;
-    padding-left: 5vw;
+    font-family: 'Metropolis Regular';
+    font-size: 15px;
+    padding-top: 50px;
+    padding-left: 5vw;
 }
 
 .platforms-button-1 {
-    display: flex;
-    align-items: center;
-    padding-left: 0.5vw;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5vw;
 }
 
 #XBOX, #PC, #PS4, #PS5 {
-    cursor: pointer;
-    padding-right: 8px;
+    cursor: pointer;
+    padding-right: 8px;
 }
 
 #XBOX { padding-left: 5vw; }
 
 /* Buttons */
 .advert-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-right: 40px;
-    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-right: 40px;
+    margin-top: 20px;
 }
 
 .preorder, .wishlist {
-    position: relative;
-    font-family: 'Metropolis Medium';
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1.3px;
-    text-align: center;
-    cursor: pointer;
-    width: 6.75cm;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    transition: 0.3s ease;
+    position: relative;
+    font-family: 'Metropolis Medium';
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    text-align: center;
+    cursor: pointer;
+    width: 6.75cm;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.3s ease;
 }
 
 .preorder {
-    background-color: #e60012;
-    border: 1px solid #e60012;
-    color: white;
+    background-color: #e60012;
+    border: 1px solid #e60012;
+    color: white;
 }
 
 .preorder .icon, .wishlist .icon2 {
-    position: absolute;
-    width: 30px;
-    left: 5%;
+    position: absolute;
+    width: 30px;
+    left: 5%;
 }
 
 .preorder .icon { top: 30%; }
 .wishlist .icon2 { top: 32%; }
 
 .preorder:hover {
-    background-color: transparent;
-    color: #e60012;
+    background-color: transparent;
+    color: #e60012;
 }
 
 .preorder:hover img {
-    filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4507%) hue-rotate(349deg) brightness(85%) contrast(114%);
+    filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4507%) hue-rotate(349deg) brightness(85%) contrast(114%);
 }
 
 .wishlist {
-    background-color: transparent;
-    border: 1px solid #e60012;
-    color: #e60012;
+    background-color: transparent;
+    border: 1px solid #e60012;
+    color: #e60012;
 }
 
 .wishlist:hover {
-    background-color: #e60012;
-    color: #f7f7f7;
+    background-color: #e60012;
+    color: #f7f7f7;
 }
 
 .wishlist:hover img {
-    filter: invert(100%) sepia(86%) saturate(141%) hue-rotate(206deg) brightness(114%) contrast(94%);
+    filter: invert(100%) sepia(86%) saturate(141%) hue-rotate(206deg) brightness(114%) contrast(94%);
 }
 
 /* Video Player */
 .video-container {
-    height: 60vh;
-    position: relative;
-    width: 50vw;
-    z-index: 2;
+    height: 60vh;
+    position: relative;
+    width: 50vw;
+    z-index: 2;
 }
 
 .fullscreen-iframe { 
-    position: absolute; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 100%; 
-    height: 100%; 
-    border: none;
+    position: absolute; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100%; 
+    height: 100%; 
+    border: none;
 }
 
 /* Key Features */
 .key-features-text {
-    font-family: 'Metropolis Bold';
-    padding-left: 50px;
-    padding-top: 50px;
+    font-family: 'Metropolis Bold';
+    padding-left: 50px;
+    padding-top: 50px;
 }
 
 .key-features {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
 }
 
 .key-images {
-    width: 30%;
-    text-align: center;
+    width: 30%;
+    text-align: center;
 }
 
 .key-images img {
-    width: 100%;
-    height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .image-title {
-    font-family: 'Metropolis Bold';
-    font-size: 1.2rem;
-    border: 2px solid #e60012;
-    padding: 10px;
-    margin: 15px 0;
+    font-family: 'Metropolis Bold';
+    font-size: 1.2rem;
+    border: 2px solid #e60012;
+    padding: 10px;
+    margin: 15px 0;
 }
 
 .image-caption {
-    font-family: 'Metropolis Regular';
-    font-size: 1rem;
+    font-family: 'Metropolis Regular';
+    font-size: 1rem;
 }
 
 /* Email Section */
 .subscribe-container {
-    padding: 80px 40px;
-    text-align: center;
+    padding: 80px 40px;
+    text-align: center;
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .email-input {
-    padding: 10px;
-    width: 300px;
-    border-radius: 4px;
-    border: none;
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
 }
 
 .subscribe-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Metropolis Bold';
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Metropolis Bold';
 }
 
 /* Media Queries */
 @media (max-width: 1024px) {
-    .navbar .nav-links { gap: 30px; }
-    
-    .grid-container-top {
-        grid-template-columns: 1fr;
-        margin: 20px;
-    }
+    .navbar .nav-links { gap: 30px; }
+    
+    .grid-container-top {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
 
-    .video-container {
-        width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
-    }
+    .video-container {
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
 
-    .key-features {
-        flex-direction: column;
-        align-items: center;
-    }
+    .key-features {
+        flex-direction: column;
+        align-items: center;
+    }
 
-    .key-images {
-        width: 90%;
-        margin-bottom: 40px;
-    }
+    .key-images {
+        width: 90%;
+        margin-bottom: 40px;
+    }
 }
