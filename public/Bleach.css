@@ -99,14 +99,11 @@ a {
 
 /* Main Content - Video Parallax Section */
 .parallax {
-    position: relative; /* CRITICAL: This anchors the absolute logo inside the box */
+    position: relative; /* Anchor for the logo */
     height: 64vh;
     width: 100vw;
     overflow: hidden;
     background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .parallax-video {
@@ -119,24 +116,28 @@ a {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: 1; /* Lowest layer */
+    z-index: 1;
     
-    /* Disables mouse interaction with the video */
+    /* This fixes the scrolling issue */
     pointer-events: none;
     user-select: none;
 }
 
-/* Logo centered on top of the video */
+/* Logo CSS restored to original overlap position */
 .logo-container {
     position: absolute;
-    top: 50%; 
+    /* Pushes it down to the bottom edge of the 64vh banner */
+    top: 72%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* Highest layer in this section */
+    z-index: 100; /* High z-index to stay on top of all elements */
     width: auto;
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
+    
+    /* Ensures logo doesn't block scrolling either */
+    pointer-events: none; 
 }
 
 .logo-container img {
@@ -329,52 +330,3 @@ a {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
-}
-
-.email-input {
-    padding: 10px;
-    width: 300px;
-    border-radius: 4px;
-    border: none;
-}
-
-.subscribe-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Metropolis Bold';
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    .navbar .nav-links { gap: 30px; }
-    
-    .grid-container-top {
-        grid-template-columns: 1fr;
-        margin: 20px;
-    }
-
-    .video-container {
-        width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
-    }
-
-    .key-features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .key-images {
-        width: 90%;
-        margin-bottom: 40px;
-    }
-
-    .parallax {
-        height: 40vh; /* Shorter banner for mobile */
-    }
-}
