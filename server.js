@@ -44,5 +44,5 @@ app.post('/subscribe', async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/Bleach.html`);
+  console.log(`Server running at http://localhost:${PORT}/index.html`);
 });
