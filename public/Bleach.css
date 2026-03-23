@@ -118,7 +118,6 @@ a {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 1; /* Video sits at the bottom */
-    pointer-events: none;
 }
 
 /* Updated: Logo now sits inside parallax */
